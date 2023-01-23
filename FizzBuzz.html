@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Get a FizzBuzz Result!</h1>
+
+        <label for="number">Type a number : </label>
+        <input type="number" name="number" id="number">
+        <button type="button">Click Here!</button>
+
+        <hr>
+ 
+        <div id="container"></div>
+ 
+    </body>
+    <script>
+        const button2=document.querySelector('button');
+        button2.addEventListener('click', function() {
+            const number2=document.getElementById("number");
+            const hasil=document.createElement("p");
+
+            if (number2.value === "0" || number2.value === "undefined" || number2.value === "") {
+                hasil.innerHTML = "Invalid Input!";
+            } else {
+                if (number2.value % 3 == 0 && number2.value % 5 == 0) {
+                    hasil.innerHTML="FizzBuzz!";
+                }
+                else if (number2.value % 5 == 0) {
+                    hasil.innerHTML="Buzz!";
+                }
+                else if (number2.value % 3 == 0) {
+                    hasil.innerHTML="Fizz!";
+                }
+                else {
+                    hasil.innerHTML=number2.value;
+                }
+            }
+            document.getElementById("container").appendChild(hasil);
+        });
+        
+    </script>
+</html>
